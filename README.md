@@ -1,0 +1,33 @@
+# Next.js App
+
+This is a basic Next.js application using the App Router and TypeScript.
+
+## Getting Started
+
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Project Structure
+
+- `app/` - Contains the application pages and layouts
+- `app/page.tsx` - The home page
+- `app/layout.tsx` - The root layout
+- `app/globals.css` - Global styles
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Learn Next.js](https://nextjs.org/learn)
