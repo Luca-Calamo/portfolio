@@ -3,10 +3,7 @@ export default function Home() {
         <main className='container'>
             <div>
                 <h1>Under Construction!</h1>
-                <img
-                    src='https://www.mgmccsit.ac.in/assets/images/Under%20Construction/under_construction.gif'
-                    alt=''
-                />
+                <img src='            <h1>Under Construction!</h1>' alt='' />
             </div>
         </main>
     );
