@@ -3,17 +3,18 @@ import ProjectCard from './components/ProjectCard/ProjectCard';
 import './projects.css';
 
 const projects = [
-    { id: 1, name: 'Project 1' },
-    { id: 2, name: 'Project 2' },
-    { id: 3, name: 'Project 3' },
-    { id: 4, name: 'Project 4' },
-    { id: 5, name: 'Project 5' },
-    { id: 6, name: 'Project 6' },
+    { id: 1, name: 'Project 1', image: 'images/placeholder.jpg' },
+    { id: 2, name: 'Project 2', image: 'images/placeholder.jpg' },
+    { id: 3, name: 'Project 3', image: 'images/placeholder.jpg' },
+    { id: 4, name: 'Project 4', image: 'images/placeholder.jpg' },
+    { id: 5, name: 'Project 5', image: 'images/placeholder.jpg' },
+    { id: 6, name: 'Project 6', image: 'images/placeholder.jpg' },
 ];
 
 export default function Projects() {
     return (
         <main className='projects-main'>
+            <div className='embers'></div>
             <Link href='/'>
                 <button>Home</button>
             </Link>
@@ -24,6 +25,7 @@ export default function Projects() {
                         key={project.id}
                         id={project.id}
                         name={project.name}
+                        image={project.image}
                     />
                 ))}
             </div>
