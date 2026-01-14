@@ -7,6 +7,13 @@
     border: 1px solid #ccc;
     padding: 10px;
     cursor: pointer;
+    transition: transform 0.2s ease, border 0.2s ease;
+}
+
+.project-card:hover {
+    /* transform: scale(1.05); */
+    outline: 5px solid green;
+    border: none;
 }
 
 .project-image-placeholder {

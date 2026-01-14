@@ -4,9 +4,9 @@ export default function Home() {
     return (
         <main className='container'>
             <div className='content'>
-                <h1>Under Construction!</h1>
+                <h1>Landing Page</h1>
                 <Link href='/projects'>
-                    <button>Start</button>
+                    <button>Start Game</button>
                 </Link>
             </div>
         </main>
