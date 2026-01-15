@@ -1,15 +1,13 @@
 import Link from 'next/link';
 import ProjectCard from './components/ProjectCard/ProjectCard';
 import './projects.css';
+import { projectData } from './[id]/page';
 
-const projects = [
-    { id: 1, name: 'Project 1' },
-    { id: 2, name: 'Project 2' },
-    { id: 3, name: 'Project 3' },
-    { id: 4, name: 'Project 4' },
-    { id: 5, name: 'Project 5' },
-    { id: 6, name: 'Project 6' },
-];
+const projects = [1, 2, 3, 4, 5, 6].map((id) => ({
+    id,
+    name: projectData[id.toString()].title,
+    image: projectData[id.toString()].images[0],
+}));
 
 export default function Projects() {
     return (
@@ -24,7 +22,7 @@ export default function Projects() {
                         key={project.id}
                         id={project.id}
                         name={project.name}
-                        image={`/images/project${project.id}.jpg`}
+                        image={project.image}
                     />
                 ))}
             </div>
