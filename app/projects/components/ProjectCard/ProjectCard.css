@@ -9,6 +9,12 @@
     cursor: pointer;
     transition: transform 0.2s ease, border 0.2s ease;
     position: relative;
+    z-index: 1;
+}
+
+.project-card:active,
+.project-card:focus-within {
+    z-index: 100;
 }
 
 .project-card:hover {

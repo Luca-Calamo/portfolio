@@ -1,9 +1,6 @@
-'use client';
-
 import Link from 'next/link';
 import Tag from '../components/Tag/Tag';
 import './project-detail.css';
-import { motion } from 'framer-motion';
 
 // Dummy project data
 export const projectData: { [key: string]: any } = {
@@ -160,88 +157,46 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
     }
 
     return (
-        <motion.main
-            className='project-detail-main'
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-        >
-            <motion.div
-                className='navigation-buttons'
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-            >
+        <main className='project-detail-main'>
+            <div className='navigation-buttons'>
                 <Link href='/projects' className='back-button'>
                     ← Back to Projects
                 </Link>
-            </motion.div>
+            </div>
 
-            <motion.div
-                layoutId={`card-${params.id}`}
-                className='project-detail-container'
-                transition={{
-                    type: 'spring',
-                    stiffness: 300,
-                    damping: 30,
-                }}
-            >
-                <motion.div
-                    layoutId={`image-${params.id}`}
-                    className='project-image-large'
-                >
-                    <motion.img
+            <div className='project-detail-container'>
+                <div className='project-image-large'>
+                    <img
                         src={project.images[0]}
                         alt={project.title}
-                        layoutId={`img-${params.id}`}
                         style={{
                             width: '100%',
                             height: '100%',
                             objectFit: 'cover',
                         }}
                     />
-                </motion.div>
+                </div>
 
-                <motion.h1
-                    className='project-detail-title'
-                    layoutId={`title-${params.id}`}
-                >
-                    {project.title}
-                </motion.h1>
-            </motion.div>
+                <h1 className='project-detail-title'>{project.title}</h1>
+            </div>
 
-            <motion.div
-                className='tags-container'
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-            >
+            <div className='tags-container'>
                 {project.types.map((type: string, index: number) => (
                     <Tag key={index} label={type} />
                 ))}
-            </motion.div>
+            </div>
 
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-            >
+            <div>
                 <h2 className='section-header'>My Process</h2>
                 {project.process.map((paragraph: string, index: number) => (
                     <p key={index} className='process-text'>
                         {paragraph}
                     </p>
                 ))}
-            </motion.div>
+            </div>
 
             {project.images.length > 1 && (
-                <motion.div
-                    className='additional-images'
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                >
+                <div className='additional-images'>
                     {project.images
                         .slice(1)
                         .map((imageSrc: string, index: number) => (
@@ -259,28 +214,19 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
                                 />
                             </div>
                         ))}
-                </motion.div>
+                </div>
             )}
 
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-            >
+            <div>
                 <h2 className='section-header'>Tools</h2>
                 <div className='tags-container'>
                     {project.tools.map((tool: string, index: number) => (
                         <Tag key={index} label={tool} />
                     ))}
                 </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-                className='project-navigation'
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 }}
-            >
+            <div className='project-navigation'>
                 {prevId && (
                     <Link href={`/projects/${prevId}`} className='nav-button'>
                         ← Previous
@@ -291,7 +237,7 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
                         Next →
                     </Link>
                 )}
-            </motion.div>
-        </motion.main>
+            </div>
+        </main>
     );
 }
