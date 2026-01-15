@@ -24,6 +24,7 @@ export default function Projects() {
                         key={project.id}
                         id={project.id}
                         name={project.name}
+                        image={`/images/project${project.id}.jpg`}
                     />
                 ))}
             </div>
